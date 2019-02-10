@@ -1,0 +1,57 @@
+<html>
+    <head>
+      <style>
+        body { background-color: #46383A; font-family: "Helvetica Neue";  }
+        a { font-size:16px; text-decoration: none; }
+        .sub_link { color: #333333; font-size:11px; }
+        .link { color: #333333; }
+        .link_wrapper { 
+          display:block; 
+          float:left; 
+          width:250px; 
+          height:50px; 
+          padding:8px; 
+          border:solid #666666 1px; 
+          overflow:hidden; 
+          margin:2px; 
+          background-color:#C2D5C3;  
+          box-shadow: 1px 1px 1px #000000; 
+          border-radius: 4px; 
+        }
+        .tld.link { font-weight: bold; }
+        .tld { background: #ffffff; }
+        .tld.link_wrapper { background: #ffffff; }
+        .frag { background: #95C0C1 }
+        .amazon.link_wrapper { background: rgb(240, 212, 161);}
+        .amazon.frag, .amazon.tld { background: rgb(240, 212, 161); }
+        .amazon { color: black; }
+        div.fav { float: left; margin:4px 8px 32px 0; }
+        div.fav img { width:16px; height:16px; }
+        h2 { 
+          color: #ffffff; 
+          font-family: "Helvetica Neue"; 
+          margin:12px 0 0 0; font-size:16px;
+        }
+        .note { 
+          color: #ffffff; 
+          font-size:10px; 
+          margin:2px 0px 4px 0px; 
+        }
+        h2.section-header { 
+          float:left;
+          padding: 0px 0px 6px 0px; 
+          margin-left: 4px;
+        }
+        .column { 
+          width:560px; 
+          float:left; 
+          padding-bottom:12px;
+        }
+    </style>
+    </head>
+    <body>
+        <div style="width:1120px; margin:0 auto;">
+          {% body %}
+        </div>
+    </body>
+</html>

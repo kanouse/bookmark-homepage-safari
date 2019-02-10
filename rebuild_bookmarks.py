@@ -1,48 +1,34 @@
 import sqlite3
 from datetime import datetime
-from urlparse import urlparse
-
-"""
-Will skip URLs where the tld and the title are the same as a history item that has already come through. 
-"""
+from urllib.parse import urlparse
 
 print ('creating bookmarks...')
 
-conn = sqlite3.connect("/Users/djk/Library/Safari/History.db")
+# History is stored as a sqllite database.
+# Fun fact, a linked iOS device will update this history as well.
+HISTORY_LOCATION = "/Users/djk/Library/Safari/History.db"
 
-file = open("bookmarks.html", "w")
+# Open a connection to the safari history database
+conn = sqlite3.connect(HISTORY_LOCATION)
 
+# Get the HTML template for our home page.
+with open("template.html", "r") as file:
+  template_html = file.read()
 
-file.write('<html><head><style>\r\n')
+# The document title
+body = """
+  <div style="width:1120px; margin:0 auto;">
+  <h2>darryl kanouse / djk / {0} </h2>
+  <div class="note">To rebuild bookmarks run: <code>rebuild_bookmarks.py</code></div>
+""".format(str(datetime.now()))
 
-file.write('body { background-color: #2F4858; font-family: "Helvetica Neue";  }\r\n')
-file.write('a { font-size:16px; text-decoration: none; }\r\n')
-file.write('.sub_link { color: #333333; font-size:11px; }\r\n')
-file.write('.link { color: #333333; }\r\n')
-file.write('.link_wrapper { display:block; float:left; width:250px; height:50px; padding:8px; border:solid #000000 1px; overflow:hidden; margin:2px; background-color:#96d2f2;  box-shadow: 4px 4px 4px #000000; border-radius: 4px; }\r\n')
-file.write('.tld.link { font-weight: bold; }\r\n')
-file.write('.tld { background: #ffffff; }\r\n')
-file.write('.tld.link_wrapper { background: #ffffff; }\r\n')
-file.write('.frag { background: #6CA9D8; }\r\n')
-file.write('.amazon.link_wrapper { background: #F6AE2D }\r\n')
-file.write('.amazon.frag, .amazon.tld { background: #F6AE2D; }\r\n')
-file.write('.amazon { color: black; }\r\n')
-file.write('div.fav { float: left; margin:4px 8px 32px 0; }\r\n')
-file.write('div.fav img { width:16px; height:16px; }\r\n')
-file.write('h2 { color:white; font-family: "Helvetica Neue"; margin:12px 0 0 0; font-size:16px;}')
-file.write('.note { color:white; font-size:10px; margin:2px 0px 4px 0px; }')
-file.write('.section_header { color:white; font-size:8px; width=900px; padding:2dpx; display:block; clear:both; text-align:right; margin-right:32px;  }')
-file.write('.column { width:560px; float:left; padding-bottom:12px;}')
-
-file.write('</style></head><body>')
-file.write('<div style="width:1120px; margin:0 auto;">')
-file.write('<h2>darryl kanouse / djk / ' + str(datetime.now()) + '</h2>')
-file.write('<div class="note">To rebuild bookmarks run: /Users/djk/repos/safari_history/rebuild_bookmarks.py</div>')
-
+# Will skip URLs where the tld and the title are the same as a history item that has already come through. 
 written = []
 
-def write_bookmarks(file, cursor, written, limit, tldonly ):
-    file.write('<div class="column">')
+def write_bookmarks(body, cursor, written, limit, tldonly ):
+    """This is the main function that writes the bookmark HTML
+    """
+    body += '<div class="column">'
 
     i = 0
     for row in cursor:
@@ -85,23 +71,27 @@ def write_bookmarks(file, cursor, written, limit, tldonly ):
         i += 1
         if i > limit: break
 
-        file.write('<a href="' + url + '" class="' + style_class + 'link_wrapper">')
-        file.write('<div class="fav"><img src="' + parsed.scheme + '://' + parsed.netloc + '/favicon.ico" ')
-        file.write('onerror="this.onerror=null; this.src=\'https://www.google.com/s2/favicons?domain=' + parsed.netloc + '\'" /></div>')
+        body += '<a href="' + url + '" class="' + style_class + 'link_wrapper">'
+        body += '<div class="fav"><img src="' + parsed.scheme + '://' + parsed.netloc + '/favicon.ico" '
+        body += 'onerror="this.onerror=null; this.src=\'https://www.google.com/s2/favicons?domain=' + parsed.netloc + '\'" /></div>'
+
 
         link = '<div class="' + style_class + 'link">' + str(parsed.netloc).replace("www.", "") + '</div>'
         sub_link = '<div class="' + style_class + 'sub_link">' + title + '</div>'
 
-        file.write(link.encode('utf8') + "\r\n")
-        file.write(sub_link.encode('utf8') + "\r\n")
-        file.write('</a>')
+        # body += str(link.encode('utf8')) + "\r\n"
+        # body += str(sub_link.encode('utf8')) + "\r\n"
+        body += link + "\r\n"
+        body += sub_link + "\r\n"
+        body += '</a>'
 
         written.append(url) # write the url version
         written.append(long_title) # write the long string version
 
-    file.write('</div>')
+    body += '</div>'
+    return body
 
-
+# Get the main links that are not amazon and not google.
 cursor = conn.execute("""
   select count(*) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
@@ -112,10 +102,20 @@ cursor = conn.execute("""
   order by count desc
   limit 200
   """)
+body = write_bookmarks(body, cursor, written, 48, False)
 
-# file.write('<div class="section_header">- 45 days -</div>')
-write_bookmarks(file, cursor, written, 48, False)
-
+cursor = conn.execute("""
+  select count(*) as count, h.url, v.title from history_visits v 
+    inner join history_items h on h.id = v.history_item
+  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-14 day')
+    and ((h.url not like '%amazon.com%') or (h.url like '%www.amazon.com%'))
+    and h.url not like '%docs.google.com%'
+  group by h.url, v.title
+  order by count desc
+  limit 120
+  """)
+body += "<h2 class='section-header'>latest (past 14 days)</h2>"
+body = write_bookmarks(body, cursor, written, 10, False)
 
 cursor = conn.execute("""
   select count(*) as count, h.url, v.title from history_visits v 
@@ -126,41 +126,23 @@ cursor = conn.execute("""
   order by count desc
   limit 200
   """)
-
-# file.write('<div class="section_header">- 45 days -</div>')
-write_bookmarks(file, cursor, written, 10, False)
-
-
-cursor = conn.execute("""
-  select count(*) as count, h.url, v.title from history_visits v 
-    inner join history_items h on h.id = v.history_item
-  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-14 day')
-    and h.url not like '%amazon.com%'
-    and h.url not like '%docs.google.com%'
-  group by h.url, v.title
-  order by count desc
-  limit 120
-  """)
-
-# file.write('<div class="section_header">- 14 days -</div>')
-write_bookmarks(file, cursor, written, 10, False)
-
+body += "<h2 class='section-header'>google.com (past 45 days)</h2>"
+body = write_bookmarks(body, cursor, written, 10, False)
 
 cursor = conn.execute("""
   select count(*) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
   where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-45 day')
     and h.url like '%amazon.com%'
+    and h.url not like '%www.amazon.com%'
   group by h.url, v.title
   order by count desc
   limit 200
   """)
+body += "<h2 class='section-header'>amazon.com (past 45 days)</h2>"
+body = write_bookmarks(body, cursor, written, 24, False)
 
-# file.write('<div class="section_header">- 45 days -</div>')
-write_bookmarks(file, cursor, written, 40, False)
-
-
-
-file.write('</div></body></html>')
+file = open('homepage.html', 'w')
+file.write(template_html.replace('{% body %}', body))
 
 print ('done')
