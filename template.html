@@ -1,22 +1,36 @@
 <html>
     <head>
       <style>
-        body { background-color: #7f7f7f; font-family: "Helvetica Neue";  }
+         body { background-color: #eeeeee; font-family: "Helvetica Neue";  }
         a { font-size:16px; text-decoration: none; }
+
+
+        .grid-container {
+          width: 85%;
+          margin: auto;
+          display: grid;
+          grid-template-columns: auto auto auto auto auto;
+        }
+
+
+
         .sub_link { color: #333333; font-size:11px; }
         .link { color: #333333; }
         .link_wrapper { 
+          /*
           display:block; 
           float:left; 
-          width:250px; 
-          height:50px; 
-          padding:8px; 
+          */
+          width:auto; 
+          height:38px; 
+          padding:12px; 
           border:solid #999999 1px; 
           overflow:hidden; 
           margin:2px; 
-          background-color:#C2D5C3;  
+          background-color:#Cfe3e5;  
           /* box-shadow: 1px 1px 1px #666666; */
           border-radius: 4px; 
+          white-space: nowrap;
         }
         .tld.link { font-weight: bold; }
         .tld { background: #ffffff; }
@@ -28,19 +42,24 @@
         div.fav { float: left; margin:4px 8px 32px 0; }
         div.fav img { width:16px; height:16px; }
         h2 { 
-          color: #ffffff; 
+          color: #333333; 
           font-family: "Helvetica Neue"; 
           margin:12px 0 0 0; font-size:16px;
         }
         .note { 
-          color: #ffffff; 
+          color: #333333; 
           font-size:10px; 
           margin:2px 0px 4px 0px; 
         }
         h2.section-header { 
-          float:left;
-          padding: 0px 0px 6px 0px; 
-          margin-left: 4px;
+          grid-column: 1/6;
+          font-size: 10px;
+          font-weight: normal;
+          padding: 4px;
+          /*
+          margin-bottom: 4px;
+          border-bottom: solid 1px #ffffff;
+          */
         }
         .column { 
           width:560px; 
@@ -50,8 +69,6 @@
     </style>
     </head>
     <body>
-        <div style="width:1120px; margin:0 auto;">
           {% body %}
-        </div>
     </body>
 </html>

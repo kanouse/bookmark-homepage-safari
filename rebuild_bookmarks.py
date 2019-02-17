@@ -1,4 +1,5 @@
 import sqlite3
+import io
 from datetime import datetime
 from urllib.parse import urlparse
 
@@ -12,14 +13,16 @@ HISTORY_LOCATION = "/Users/djk/Library/Safari/History.db"
 conn = sqlite3.connect(HISTORY_LOCATION)
 
 # Get the HTML template for our home page.
-with open("template.html", "r") as file:
+with open("template.html", "r", encoding="utf-8") as file:
   template_html = file.read()
 
 # The document title
 body = """
-  <div style="width:1120px; margin:0 auto;">
+  <center>
   <h2>darryl kanouse / djk / {0} </h2>
   <div class="note">To rebuild bookmarks run: <code>rebuild_bookmarks.py</code></div>
+  </center>
+  <div class="grid-container">
 """.format(str(datetime.now()))
 
 # Will skip URLs where the tld and the title are the same as a history item that has already come through. 
@@ -28,7 +31,6 @@ written = []
 def write_bookmarks(body, cursor, written, limit, tldonly ):
     """This is the main function that writes the bookmark HTML
     """
-    body += '<div class="column">'
 
     i = 0
     for row in cursor:
@@ -53,7 +55,10 @@ def write_bookmarks(body, cursor, written, limit, tldonly ):
 
         # check if indistinguishable version came through already
         if long_title in written:
-            print ('skipping: ' + long_title)
+            # try:
+            #     print ('skipping: ' + long_title)
+            # except UnicodeEncodeError:
+            #     print ('skipping: FILE WITH UNICODE CHARACTER');
             continue
 
         # check if url came through already
@@ -82,67 +87,71 @@ def write_bookmarks(body, cursor, written, limit, tldonly ):
         # body += str(link.encode('utf8')) + "\r\n"
         # body += str(sub_link.encode('utf8')) + "\r\n"
         body += link + "\r\n"
-        body += sub_link + "\r\n"
+        body += sub_link + "\r\n"    
         body += '</a>'
 
         written.append(url) # write the url version
         written.append(long_title) # write the long string version
 
-    body += '</div>'
     return body
 
 # Get the main links that are not amazon and not google.
 cursor = conn.execute("""
   select count(*) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
-  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-90 day')
-    and h.url not like '%amazon.com%'
-    and h.url not like '%docs.google.com%'
+  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-120 day')
+    -- and h.url not like '%amazon.com%'
+    -- and h.url not like '%docs.google.com%'
   group by h.url, v.title
   order by count desc
-  limit 200
+  limit 100
   """)
-body = write_bookmarks(body, cursor, written, 48, False)
+body += "<h2 class='section-header'>120</h2>"
+body = write_bookmarks(body, cursor, written, 20, False)
 
 cursor = conn.execute("""
   select count(*) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
-  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-14 day')
-    and ((h.url not like '%amazon.com%') or (h.url like '%www.amazon.com%'))
-    and h.url not like '%docs.google.com%'
+  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-60 day')
+    -- and ((h.url not like '%amazon.com%') or (h.url like '%www.amazon.com%'))
+    -- and h.url not like '%docs.google.com%'
   group by h.url, v.title
   order by count desc
-  limit 120
+  limit 100
   """)
-body += "<h2 class='section-header'>latest (past 14 days)</h2>"
-body = write_bookmarks(body, cursor, written, 10, False)
+body += "<h2 class='section-header'>60</h2>"
+body = write_bookmarks(body, cursor, written, 20, False)
 
 cursor = conn.execute("""
   select count(*) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
-  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-45 day')
-    and h.url like '%docs.google.com%'
+  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-30 day')
+    -- and h.url like '%docs.google.com%'
   group by h.url, v.title
   order by count desc
-  limit 200
+  limit 100
   """)
-body += "<h2 class='section-header'>google.com (past 45 days)</h2>"
-body = write_bookmarks(body, cursor, written, 10, False)
+body += "<h2 class='section-header'>30</h2>"
+body = write_bookmarks(body, cursor, written, 20, False)
 
 cursor = conn.execute("""
   select count(*) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
-  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-45 day')
-    and h.url like '%amazon.com%'
-    and h.url not like '%www.amazon.com%'
+  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-15 day')
+    -- and h.url like '%amazon.com%'
+    -- and h.url not like '%www.amazon.com%'
   group by h.url, v.title
   order by count desc
-  limit 200
+  limit 100
   """)
-body += "<h2 class='section-header'>amazon.com (past 45 days)</h2>"
-body = write_bookmarks(body, cursor, written, 24, False)
-
-file = open('homepage.html', 'w')
-file.write(template_html.replace('{% body %}', body))
+body += "<h2 class='section-header'>15</h2>"
+body = write_bookmarks(body, cursor, written, 20, False)
+body += "</div>"
+with io.open('homepage.html', 'wb') as file:
+  file.write(
+      (template_html.encode('utf-8').replace(
+        ''.join('{% body %}').encode('utf-8'), 
+        ''.join(body).encode('utf-8')))
+  )
 
 print ('done')

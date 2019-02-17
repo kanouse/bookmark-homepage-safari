@@ -1,22 +1,36 @@
 <html>
     <head>
       <style>
-        body { background-color: #7f7f7f; font-family: "Helvetica Neue";  }
+         body { background-color: #eeeeee; font-family: "Helvetica Neue";  }
         a { font-size:16px; text-decoration: none; }
+
+
+        .grid-container {
+          width: 85%;
+          margin: auto;
+          display: grid;
+          grid-template-columns: auto auto auto auto auto;
+        }
+
+
+
         .sub_link { color: #333333; font-size:11px; }
         .link { color: #333333; }
         .link_wrapper { 
+          /*
           display:block; 
           float:left; 
-          width:250px; 
-          height:50px; 
-          padding:8px; 
+          */
+          width:auto; 
+          height:38px; 
+          padding:12px; 
           border:solid #999999 1px; 
           overflow:hidden; 
           margin:2px; 
-          background-color:#C2D5C3;  
+          background-color:#Cfe3e5;  
           /* box-shadow: 1px 1px 1px #666666; */
           border-radius: 4px; 
+          white-space: nowrap;
         }
         .tld.link { font-weight: bold; }
         .tld { background: #ffffff; }
@@ -28,19 +42,24 @@
         div.fav { float: left; margin:4px 8px 32px 0; }
         div.fav img { width:16px; height:16px; }
         h2 { 
-          color: #ffffff; 
+          color: #333333; 
           font-family: "Helvetica Neue"; 
           margin:12px 0 0 0; font-size:16px;
         }
         .note { 
-          color: #ffffff; 
+          color: #333333; 
           font-size:10px; 
           margin:2px 0px 4px 0px; 
         }
         h2.section-header { 
-          float:left;
-          padding: 0px 0px 6px 0px; 
-          margin-left: 4px;
+          grid-column: 1/6;
+          font-size: 10px;
+          font-weight: normal;
+          padding: 4px;
+          /*
+          margin-bottom: 4px;
+          border-bottom: solid 1px #ffffff;
+          */
         }
         .column { 
           width:560px; 
@@ -50,12 +69,13 @@
     </style>
     </head>
     <body>
-        <div style="width:1120px; margin:0 auto;">
           
-  <div style="width:1120px; margin:0 auto;">
-  <h2>darryl kanouse / djk / 2019-02-10 11:14:25.177654 </h2>
+  <center>
+  <h2>darryl kanouse / djk / 2019-02-17 07:47:37.061378 </h2>
   <div class="note">To rebuild bookmarks run: <code>rebuild_bookmarks.py</code></div>
-<div class="column"><a href="http://localhost:8100/#/questions/questions" class="frag link_wrapper"><div class="fav"><img src="http://localhost:8100/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=localhost:8100'" /></div><div class="frag link">localhost:8100</div>
+  </center>
+  <div class="grid-container">
+<h2 class='section-header'>120</h2><a href="http://localhost:8100/#/questions/questions" class="frag link_wrapper"><div class="fav"><img src="http://localhost:8100/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=localhost:8100'" /></div><div class="frag link">localhost:8100</div>
 <div class="frag sub_link">wise.one</div>
 </a><a href="https://twitter.com/djk/lists/politics" class="link_wrapper"><div class="fav"><img src="https://twitter.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=twitter.com'" /></div><div class="link">twitter.com</div>
 <div class="sub_link">@djk/Politics on Twitter</div>
@@ -63,177 +83,152 @@
 <div class="tld sub_link">DRUDGE REPORT 2019®</div>
 </a><a href="https://www.cnn.com/" class="tld link_wrapper"><div class="fav"><img src="https://www.cnn.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.cnn.com'" /></div><div class="tld link">cnn.com</div>
 <div class="tld sub_link">CNN - Breaking News, Latest News and Videos</div>
+</a><a href="https://github.com/orgs/getwiseone/projects/3" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">Platform Development</div>
 </a><a href="https://www.washingtonpost.com/" class="tld link_wrapper"><div class="fav"><img src="https://www.washingtonpost.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.washingtonpost.com'" /></div><div class="tld link">washingtonpost.com</div>
 <div class="tld sub_link">Washington Post: Breaking News, World, US, DC News & Analysis - The Washington Post</div>
 </a><a href="https://www.realclearpolitics.com/epolls/other/president_trump_job_approval-6179.html" class="link_wrapper"><div class="fav"><img src="https://www.realclearpolitics.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.realclearpolitics.com'" /></div><div class="link">realclearpolitics.com</div>
 <div class="sub_link">RealClearPolitics - Election Other - President Trump Job Approval</div>
+</a><a href="https://www.flaticon.com/free-icon/conversation_942751#term=question&page=1&position=12" class="frag link_wrapper"><div class="fav"><img src="https://www.flaticon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.flaticon.com'" /></div><div class="frag link">flaticon.com</div>
+<div class="frag sub_link">Conversation - Free user icons</div>
+</a><a href="https://docs.google.com/spreadsheets/d/10HNH7W2m3TNun9OOM_oHMgl7SKD75q1AvmPMAY4J-Ao/edit#gid=0" class="frag link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="frag link">docs.google.com</div>
+<div class="frag sub_link">Expenses - Google Sheets</div>
+</a><a href="https://connections-reporting.corp.amazon.com/#/?currentView=ORGS&selectedTimeRangeId=static-1-month" class="amazon frag link_wrapper"><div class="fav"><img src="https://connections-reporting.corp.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=connections-reporting.corp.amazon.com'" /></div><div class="amazon frag link">connections-reporting.corp.amazon.com</div>
+<div class="amazon frag sub_link">Connections Reporting</div>
 </a><a href="https://www.foxnews.com/" class="tld link_wrapper"><div class="fav"><img src="https://www.foxnews.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.foxnews.com'" /></div><div class="tld link">foxnews.com</div>
 <div class="tld sub_link">Fox News - Breaking News Updates | Latest News Headlines | Photos & News Videos</div>
-</a><a href="https://c3.qbo.intuit.com/app/expenses" class="link_wrapper"><div class="fav"><img src="https://c3.qbo.intuit.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=c3.qbo.intuit.com'" /></div><div class="link">c3.qbo.intuit.com</div>
-<div class="sub_link">Expense Transactions</div>
 </a><a href="http://www.espn.com/" class="tld link_wrapper"><div class="fav"><img src="http://www.espn.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.espn.com'" /></div><div class="tld link">espn.com</div>
 <div class="tld sub_link">ESPN: The Worldwide Leader in Sports</div>
-</a><a href="https://pitchfork.com/features/lists-and-guides/the-50-best-albums-of-2018/?page=5" class="link_wrapper"><div class="fav"><img src="https://pitchfork.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=pitchfork.com'" /></div><div class="link">pitchfork.com</div>
-<div class="sub_link">The 50 Best Albums of 2018 | Pitchfork</div>
-</a><a href="http://www.espn.com/nba/standings" class="link_wrapper"><div class="fav"><img src="http://www.espn.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.espn.com'" /></div><div class="link">espn.com</div>
-<div class="sub_link">2018-19 NBA Standings | ESPN</div>
+</a><a href="https://docs.google.com/spreadsheets/d/1B-XTZbLK-P9yU6Dbe1IgPDgXZw3z3X9RtTMR4PnYj9Y/edit#gid=0" class="frag link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="frag link">docs.google.com</div>
+<div class="frag sub_link">Forecasting - Google Sheets</div>
+</a><a href="https://c3.qbo.intuit.com/app/expenses" class="link_wrapper"><div class="fav"><img src="https://c3.qbo.intuit.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=c3.qbo.intuit.com'" /></div><div class="link">c3.qbo.intuit.com</div>
+<div class="sub_link">Expense Transactions</div>
+</a><a href="https://docs.google.com/presentation/d/1dpt9e7BKQQgVLz-Ze7ehswC3Wy5KkY83bUNJcrFg-Q8/edit#slide=id.p" class="frag link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="frag link">docs.google.com</div>
+<div class="frag sub_link">Untitled presentation - Google Slides</div>
 </a><a href="https://www.linkedin.com/" class="tld link_wrapper"><div class="fav"><img src="https://www.linkedin.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.linkedin.com'" /></div><div class="tld link">linkedin.com</div>
 <div class="tld sub_link">LinkedIn</div>
-</a><a href="https://docs.wise.one/" class="tld link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="tld link">docs.wise.one</div>
-<div class="tld sub_link">Introductions - wise.one</div>
+</a><a href="https://dashboard.ionicframework.com/app/4e0e677b/deploy/builds" class="link_wrapper"><div class="fav"><img src="https://dashboard.ionicframework.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=dashboard.ionicframework.com'" /></div><div class="link">dashboard.ionicframework.com</div>
+<div class="sub_link">Ionic Dashboard</div>
 </a><a href="https://twitter.com/" class="tld link_wrapper"><div class="fav"><img src="https://twitter.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=twitter.com'" /></div><div class="tld link">twitter.com</div>
 <div class="tld sub_link">Twitter</div>
-</a><a href="http://www.espn.com/nba/" class="link_wrapper"><div class="fav"><img src="http://www.espn.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.espn.com'" /></div><div class="link">espn.com</div>
-<div class="sub_link">NBA - National Basketball Association Teams, Scores, Stats, News, Standings, Rumors - ESPN</div>
-</a><a href="http://www.espn.com/nba/scoreboard" class="link_wrapper"><div class="fav"><img src="http://www.espn.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.espn.com'" /></div><div class="link">espn.com</div>
-<div class="sub_link">NBA Basketball Scores - NBA Scoreboard - ESPN</div>
-</a><a href="https://www.wise.one/" class="tld link_wrapper"><div class="fav"><img src="https://www.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.wise.one'" /></div><div class="tld link">wise.one</div>
-<div class="tld sub_link">wise.one</div>
-</a><a href="https://www.yahoo.com/news/mueller-preparing-end-game-russia-investigation-225720798.html" class="link_wrapper"><div class="fav"><img src="https://www.yahoo.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.yahoo.com'" /></div><div class="link">yahoo.com</div>
-<div class="sub_link">Mueller preparing endgame for Russia probe</div>
-</a><a href="https://c3.qbo.intuit.com/app/expense" class="link_wrapper"><div class="fav"><img src="https://c3.qbo.intuit.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=c3.qbo.intuit.com'" /></div><div class="link">c3.qbo.intuit.com</div>
-<div class="sub_link">Expense</div>
-</a><a href="https://www.gitbook.com/@wiseone/spaces" class="link_wrapper"><div class="fav"><img src="https://www.gitbook.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.gitbook.com'" /></div><div class="link">gitbook.com</div>
-<div class="sub_link">Spaces - wise.one</div>
-</a><a href="https://c3.qbo.intuit.com/app/homepage" class="link_wrapper"><div class="fav"><img src="https://c3.qbo.intuit.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=c3.qbo.intuit.com'" /></div><div class="link">c3.qbo.intuit.com</div>
-<div class="sub_link">QuickBooks</div>
-</a><a href="https://analytics.google.com/analytics/web/#/report-home/a126264335w185003854p182252178" class="frag link_wrapper"><div class="fav"><img src="https://analytics.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=analytics.google.com'" /></div><div class="frag link">analytics.google.com</div>
-<div class="frag sub_link">Analytics</div>
-</a><a href="https://app.liveplan.com/company/mZPDL/Atfl/forecast/revenue" class="link_wrapper"><div class="fav"><img src="https://app.liveplan.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=app.liveplan.com'" /></div><div class="link">app.liveplan.com</div>
-<div class="sub_link">Revenue - wise.one - LivePlan</div>
-</a><a href="https://c3.qbo.intuit.com/app/chartofaccounts" class="link_wrapper"><div class="fav"><img src="https://c3.qbo.intuit.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=c3.qbo.intuit.com'" /></div><div class="link">c3.qbo.intuit.com</div>
-<div class="sub_link">Chart of Accounts</div>
-</a><a href="https://news.google.com/?hl=en-US&gl=US&ceid=US:en" class="link_wrapper"><div class="fav"><img src="https://news.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=news.google.com'" /></div><div class="link">news.google.com</div>
-<div class="sub_link">Google News</div>
-</a><a href="https://dashboard.stripe.com/dashboard" class="link_wrapper"><div class="fav"><img src="https://dashboard.stripe.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=dashboard.stripe.com'" /></div><div class="link">dashboard.stripe.com</div>
-<div class="sub_link">Dashboard</div>
-</a><a href="https://github.com/getwiseone/gitbook-docs" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
-<div class="sub_link">getwiseone/gitbook-docs: gitbook.com docs</div>
-</a><a href="https://wise-one-news.ghost.io/" class="tld link_wrapper"><div class="fav"><img src="https://wise-one-news.ghost.io/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=wise-one-news.ghost.io'" /></div><div class="tld link">wise-one-news.ghost.io</div>
-<div class="tld sub_link">wise.one</div>
-</a><a href="https://mail.google.com/mail/u/2/" class="link_wrapper"><div class="fav"><img src="https://mail.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=mail.google.com'" /></div><div class="link">mail.google.com</div>
-<div class="sub_link">wise.one Mail</div>
-</a><a href="https://www.instagram.com/" class="tld link_wrapper"><div class="fav"><img src="https://www.instagram.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.instagram.com'" /></div><div class="tld link">instagram.com</div>
-<div class="tld sub_link">Instagram</div>
-</a><a href="http://wheretheheckismom.com/" class="tld link_wrapper"><div class="fav"><img src="http://wheretheheckismom.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=wheretheheckismom.com'" /></div><div class="tld link">wheretheheckismom.com</div>
-<div class="tld sub_link">Where the Heck is Mom?</div>
-</a><a href="https://dashboard.branch.io/" class="tld link_wrapper"><div class="fav"><img src="https://dashboard.branch.io/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=dashboard.branch.io'" /></div><div class="tld link">dashboard.branch.io</div>
-<div class="tld sub_link">Dashboard - Branch Metrics</div>
+</a><a href="https://docs.google.com/spreadsheets/d/1MaHJlvxWohKiUq-KVBDNj2byZ1llfdoZ_1kw9I2lOKo/edit#gid=0" class="frag link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="frag link">docs.google.com</div>
+<div class="frag sub_link">Untitled spreadsheet - Google Sheets</div>
 </a><a href="https://github.com/getwiseone" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
 <div class="sub_link">wise.one</div>
-</a><a href="https://my.ghost.org/p/682778" class="link_wrapper"><div class="fav"><img src="https://my.ghost.org/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=my.ghost.org'" /></div><div class="link">my.ghost.org</div>
-<div class="sub_link">Account</div>
-</a><a href="https://c3.qbo.intuit.com/app/banking" class="link_wrapper"><div class="fav"><img src="https://c3.qbo.intuit.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=c3.qbo.intuit.com'" /></div><div class="link">c3.qbo.intuit.com</div>
-<div class="sub_link">Bank and Credit Cards</div>
-</a><a href="https://wise-one-news.ghost.io/ghost/#/" class="frag link_wrapper"><div class="fav"><img src="https://wise-one-news.ghost.io/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=wise-one-news.ghost.io'" /></div><div class="frag link">wise-one-news.ghost.io</div>
-<div class="frag sub_link">Content - News & Documentation</div>
-</a><a href="https://www.gitbook.com/?t=1" class="link_wrapper"><div class="fav"><img src="https://www.gitbook.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.gitbook.com'" /></div><div class="link">gitbook.com</div>
-<div class="sub_link">GitBook</div>
-</a><a href="https://discuss.stripe.community/" class="tld link_wrapper"><div class="fav"><img src="https://discuss.stripe.community/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=discuss.stripe.community'" /></div><div class="tld link">discuss.stripe.community</div>
-<div class="tld sub_link">Stripe Atlas Community</div>
-</a><a href="https://mail.google.com/mail/u/0/" class="link_wrapper"><div class="fav"><img src="https://mail.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=mail.google.com'" /></div><div class="link">mail.google.com</div>
-<div class="sub_link">Kanouse Mail</div>
-</a><a href="https://www.bankofamerica.com/smallbusiness/" class="link_wrapper"><div class="fav"><img src="https://www.bankofamerica.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.bankofamerica.com'" /></div><div class="link">bankofamerica.com</div>
-<div class="sub_link">Small Business Banking Accounts and Services from Bank of America</div>
+</a><h2 class='section-header'>60</h2><a href="https://quip-amazon.com/bLOoAsA9i9MG/Jackson-Iteration-1-Journeys" class="amazon link_wrapper"><div class="fav"><img src="https://quip-amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=quip-amazon.com'" /></div><div class="amazon link">quip-amazon.com</div>
+<div class="amazon sub_link">(8) Jackson: Iteration 1 Journeys - Quip</div>
+</a><a href="https://docs.google.com/presentation/d/1dpt9e7BKQQgVLz-Ze7ehswC3Wy5KkY83bUNJcrFg-Q8/edit#slide=id.g4f9bf0760f_0_226" class="frag link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="frag link">docs.google.com</div>
+<div class="frag sub_link">tech preview preso - Google Slides</div>
+</a><a href="https://docs.wise.one/" class="tld link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="tld link">docs.wise.one</div>
+<div class="tld sub_link">Introductions - wise.one</div>
+</a><a href="https://analytics.google.com/analytics/web/#/report-home/a126264335w185003854p182252178" class="frag link_wrapper"><div class="fav"><img src="https://analytics.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=analytics.google.com'" /></div><div class="frag link">analytics.google.com</div>
+<div class="frag sub_link">Analytics</div>
+</a><a href="https://www.notion.so/wiseone/12b2e4da9739419f8551f0a853726b5b?v=4b9ea6e84a6b476c83b2abd82d00f0ca" class="link_wrapper"><div class="fav"><img src="https://www.notion.so/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.notion.so'" /></div><div class="link">notion.so</div>
+<div class="sub_link">Program Manager</div>
+</a><a href="https://github.com/orgs/getwiseone/projects" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">Projects · getwiseone</div>
+</a><a href="https://phonetool.amazon.com/users/djk" class="amazon link_wrapper"><div class="fav"><img src="https://phonetool.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=phonetool.amazon.com'" /></div><div class="amazon link">phonetool.amazon.com</div>
+<div class="amazon sub_link">Darryl Kanouse</div>
+</a><a href="https://wise-one-news.ghost.io/" class="tld link_wrapper"><div class="fav"><img src="https://wise-one-news.ghost.io/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=wise-one-news.ghost.io'" /></div><div class="tld link">wise-one-news.ghost.io</div>
+<div class="tld sub_link">wise.one</div>
+</a><a href="http://www.espn.com/nba/" class="link_wrapper"><div class="fav"><img src="http://www.espn.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.espn.com'" /></div><div class="link">espn.com</div>
+<div class="sub_link">NBA - National Basketball Association Teams, Scores, Stats, News, Standings, Rumors - ESPN</div>
+</a><a href="https://github.com/kanouse" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">kanouse (Darryl Kanouse)</div>
+</a><a href="http://www.espn.com/nba/standings" class="link_wrapper"><div class="fav"><img src="http://www.espn.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.espn.com'" /></div><div class="link">espn.com</div>
+<div class="sub_link">2018-19 NBA Standings | ESPN</div>
+</a><a href="https://github.com/" class="tld link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="tld link">github.com</div>
+<div class="tld sub_link">GitHub</div>
+</a><a href="https://www.instagram.com/" class="tld link_wrapper"><div class="fav"><img src="https://www.instagram.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.instagram.com'" /></div><div class="tld link">instagram.com</div>
+<div class="tld sub_link">Instagram</div>
 </a><a href="https://bestrewardtrackwvwgw.ooo/35d39b2a8bea1bc2e6328f55e6997233/index.html?isp=Frontier%20Communications%20Corporation&trackid=20181230060912431#" class="link_wrapper"><div class="fav"><img src="https://bestrewardtrackwvwgw.ooo/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=bestrewardtrackwvwgw.ooo'" /></div><div class="link">bestrewardtrackwvwgw.ooo</div>
 <div class="sub_link">Congratulations!</div>
 </a><a href="https://www.dailymail.co.uk/news/article-6608247/Mystery-ex-Trump-fixer-Michael-Cohen-arrives-home-apparent-black-eye-arm-sling.html" class="link_wrapper"><div class="fav"><img src="https://www.dailymail.co.uk/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.dailymail.co.uk'" /></div><div class="link">dailymail.co.uk</div>
 <div class="sub_link">Mystery ex-Trump fixer Michael Cohen arrives at home with apparent black eye and arm in sling | Daily Mail Online</div>
-</a><a href="https://dashboard.stripe.com/atlas/company" class="link_wrapper"><div class="fav"><img src="https://dashboard.stripe.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=dashboard.stripe.com'" /></div><div class="link">dashboard.stripe.com</div>
-<div class="sub_link">Atlas Incorporation</div>
-</a><a href="https://wiseone.gitbook.io/project/" class="link_wrapper"><div class="fav"><img src="https://wiseone.gitbook.io/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=wiseone.gitbook.io'" /></div><div class="link">wiseone.gitbook.io</div>
-<div class="sub_link">Initial page - wise.one</div>
+</a><a href="http://www.espn.com/nba/scoreboard" class="link_wrapper"><div class="fav"><img src="http://www.espn.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.espn.com'" /></div><div class="link">espn.com</div>
+<div class="sub_link">NBA Basketball Scores - NBA Scoreboard - ESPN</div>
 </a><a href="https://docs.wise.one/registration-verification" class="link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="link">docs.wise.one</div>
 <div class="sub_link">Registration Verification - wise.one</div>
 </a><a href="https://fivethirtyeight.com/" class="tld link_wrapper"><div class="fav"><img src="https://fivethirtyeight.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=fivethirtyeight.com'" /></div><div class="tld link">fivethirtyeight.com</div>
 <div class="tld sub_link">FiveThirtyEight | Nate Silver’s FiveThirtyEight uses statistical analysis — hard numbers — to tell compelling stories about politics, sports, science, economics and culture.</div>
-</a><a href="https://mail.google.com/mail/u/2/#inbox" class="frag link_wrapper"><div class="fav"><img src="https://mail.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=mail.google.com'" /></div><div class="frag link">mail.google.com</div>
-<div class="frag sub_link">Inbox - darryl@wise.one - wise.one Mail</div>
-</a><a href="https://github.com/" class="tld link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="tld link">github.com</div>
-<div class="tld sub_link">GitHub</div>
-</a></div><h2 class='section-header'>latest (past 14 days)</h2><div class="column"><a href="https://docs.wise.one/~/edit/drafts/-LYIcDrw8-WotLJYgINN/" class="link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="link">docs.wise.one</div>
+</a><a href="http://wheretheheckismom.com/" class="tld link_wrapper"><div class="fav"><img src="http://wheretheheckismom.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=wheretheheckismom.com'" /></div><div class="tld link">wheretheheckismom.com</div>
+<div class="tld sub_link">Where the Heck is Mom?</div>
+</a><a href="https://forte.corp.amazon.com/forte/feedback" class="amazon link_wrapper"><div class="fav"><img src="https://forte.corp.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=forte.corp.amazon.com'" /></div><div class="amazon link">forte.corp.amazon.com</div>
+<div class="amazon sub_link">Forte</div>
+</a><h2 class='section-header'>30</h2><a href="https://s3.console.aws.amazon.com/s3/buckets/wise.one-webroot/?region=us-east-1&tab=overview" class="amazon link_wrapper"><div class="fav"><img src="https://s3.console.aws.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=s3.console.aws.amazon.com'" /></div><div class="amazon link">s3.console.aws.amazon.com</div>
+<div class="amazon sub_link">S3 Management Console</div>
+</a><a href="https://www.wise.one/" class="tld link_wrapper"><div class="fav"><img src="https://www.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.wise.one'" /></div><div class="tld link">wise.one</div>
+<div class="tld sub_link">welcome to wise.one</div>
+</a><a href="https://news.yahoo.com/mccabe-25th-amendment-discussions-doj-remove-trump-office-140646145.html" class="link_wrapper"><div class="fav"><img src="https://news.yahoo.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=news.yahoo.com'" /></div><div class="link">news.yahoo.com</div>
+<div class="sub_link">McCabe says 25th Amendment was discussed</div>
+</a><a href="https://pitchfork.com/news/watch-killer-mikes-new-netflix-show-trigger-warning/" class="link_wrapper"><div class="fav"><img src="https://pitchfork.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=pitchfork.com'" /></div><div class="link">pitchfork.com</div>
+<div class="sub_link">Watch Killer Mike’s New Netflix Show “Trigger Warning” | Pitchfork</div>
+</a><a href="https://greendropbenefit.com/?97d4da2ee421d0d66079dd486cfc0b29#" class="link_wrapper"><div class="fav"><img src="https://greendropbenefit.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=greendropbenefit.com'" /></div><div class="link">greendropbenefit.com</div>
+<div class="sub_link">Woman Paralyzed By Pain Discovers Breakthrough Relief Called 'Nature's Miracle Medicine'</div>
+</a><a href="https://www.notion.so/notion/What-s-New-157765353f2c4705bd45474e5ba8b46c" class="link_wrapper"><div class="fav"><img src="https://www.notion.so/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.notion.so'" /></div><div class="link">notion.so</div>
+<div class="sub_link">Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.</div>
+</a><a href="https://github.com/getwiseone/yz1-app-ionic" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">getwiseone/yz1-app-ionic: Ionic client implementation for cross-platform deployment.</div>
+</a><a href="https://github.com/getwiseone/yz1-documentation" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">getwiseone/yz1-documentation: wise.one product and company documentation</div>
+</a><a href="https://twitter.com/AnnCoulter" class="link_wrapper"><div class="fav"><img src="https://twitter.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=twitter.com'" /></div><div class="link">twitter.com</div>
+<div class="sub_link">Ann Coulter (@AnnCoulter) | Twitter</div>
+</a><a href="https://github.com/orgs/getwiseone/people" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">People · wise.one</div>
+</a><a href="https://wiseone.atlassian.net/secure/BrowseProjects.jspa" class="link_wrapper"><div class="fav"><img src="https://wiseone.atlassian.net/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=wiseone.atlassian.net'" /></div><div class="link">wiseone.atlassian.net</div>
+<div class="sub_link">Projects - Jira</div>
+</a><a href="https://www.drip.com/" class="tld link_wrapper"><div class="fav"><img src="https://www.drip.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.drip.com'" /></div><div class="tld link">drip.com</div>
+<div class="tld sub_link">Drip Ecommerce CRM (ECRM) - Marketing Automation for Ecommerce</div>
+</a><a href="https://app.swaggerhub.com/signup?e_code=e102&e_username=kanouse&githubUsernameClash=true" class="link_wrapper"><div class="fav"><img src="https://app.swaggerhub.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=app.swaggerhub.com'" /></div><div class="link">app.swaggerhub.com</div>
+<div class="sub_link">Build, Collaborate & Integrate APIs | SwaggerHub</div>
+</a><a href="https://wiseone.atlassian.net/secure/RapidBoard.jspa?projectKey=ENG&rapidView=2" class="link_wrapper"><div class="fav"><img src="https://wiseone.atlassian.net/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=wiseone.atlassian.net'" /></div><div class="link">wiseone.atlassian.net</div>
+<div class="sub_link">ENG board - Agile Board - Jira</div>
+</a><a href="http://m.rasmussenreports.com/public_content/politics/trump_administration/trump_approval_index_history" class="link_wrapper"><div class="fav"><img src="http://m.rasmussenreports.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=m.rasmussenreports.com'" /></div><div class="link">m.rasmussenreports.com</div>
+<div class="sub_link">RealClearPolitics - Election Other - President Trump Job Approval</div>
+</a><a href="https://console.aws.amazon.com/cloudfront/home?region=us-east-1#" class="amazon link_wrapper"><div class="fav"><img src="https://console.aws.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=console.aws.amazon.com'" /></div><div class="amazon link">console.aws.amazon.com</div>
+<div class="amazon sub_link">AWS CloudFront Management Console</div>
+</a><a href="https://docs.wise.one/~/edit/drafts/-LYIcDrw8-WotLJYgINN/" class="link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="link">docs.wise.one</div>
 <div class="sub_link">Welcome to wise.one - wise.one</div>
+</a><a href="https://github.com/organizations/getwiseone/settings/profile" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">Organization profile</div>
 </a><a href="https://infogram.com/app/#/library" class="frag link_wrapper"><div class="fav"><img src="https://infogram.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=infogram.com'" /></div><div class="frag link">infogram.com</div>
 <div class="frag sub_link">Infogram</div>
-</a><a href="https://github.com/getwiseone/yz1-documentation" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
-<div class="sub_link">getwiseone/yz1-documentation: gitbook.com docs</div>
-</a><a href="https://us19.admin.mailchimp.com/lists/" class="link_wrapper"><div class="fav"><img src="https://us19.admin.mailchimp.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=us19.admin.mailchimp.com'" /></div><div class="link">us19.admin.mailchimp.com</div>
-<div class="sub_link">Lists | Mailchimp</div>
+</a><a href="https://www.pexels.com/search/people/" class="link_wrapper"><div class="fav"><img src="https://www.pexels.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.pexels.com'" /></div><div class="link">pexels.com</div>
+<div class="sub_link">Pictures of people · Pexels · Free Stock Photos</div>
+</a><h2 class='section-header'>15</h2><a href="https://docs.wise.one/getting-started" class="link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="link">docs.wise.one</div>
+<div class="sub_link">Getting Started - wise.one</div>
 </a><a href="https://www.hubspot.com/pricing/sales?selectedPackage=starter" class="link_wrapper"><div class="fav"><img src="https://www.hubspot.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.hubspot.com'" /></div><div class="link">hubspot.com</div>
 <div class="sub_link">Sales Software Pricing | HubSpot</div>
-</a><a href="https://www.who-hosts-this.com/?s=wise.one" class="link_wrapper"><div class="fav"><img src="https://www.who-hosts-this.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.who-hosts-this.com'" /></div><div class="link">who-hosts-this.com</div>
-<div class="sub_link">Hosting Provider Detection - Who Hosts This Site?</div>
-</a><a href="https://amazon.awsapps.com/workdocs-beta/index.html#/folder/4512a64a62e7a17656dfa81b9a4a321f8fef9d9baf111ece88cfbd9455a26cc7" class="amazon frag link_wrapper"><div class="fav"><img src="https://amazon.awsapps.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=amazon.awsapps.com'" /></div><div class="amazon frag link">amazon.awsapps.com</div>
-<div class="amazon frag sub_link">HPB - Stitch Work Session - WorkDocs</div>
+</a><a href="https://news.google.com/?hl=en-US&gl=US&ceid=US:en" class="link_wrapper"><div class="fav"><img src="https://news.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=news.google.com'" /></div><div class="link">news.google.com</div>
+<div class="sub_link">Google News</div>
+</a><a href="https://www.gitbook.com/@wiseone/spaces" class="link_wrapper"><div class="fav"><img src="https://www.gitbook.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.gitbook.com'" /></div><div class="link">gitbook.com</div>
+<div class="sub_link">Spaces - wise.one</div>
 </a><a href="https://drive.google.com/drive/u/1/folders/0BzDSYxn7RQ3HeDJEM3BhVTFQMFk?ths=true" class="link_wrapper"><div class="fav"><img src="https://drive.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=drive.google.com'" /></div><div class="link">drive.google.com</div>
 <div class="sub_link">Householder - Google Drive</div>
 </a><a href="https://search.google.com/search-console/welcome" class="link_wrapper"><div class="fav"><img src="https://search.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=search.google.com'" /></div><div class="link">search.google.com</div>
 <div class="sub_link">Welcome to Google Search Console</div>
-</a><a href="//" class="tld link_wrapper"><div class="fav"><img src=":///favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain='" /></div><div class="tld link"></div>
+</a><a href="https://getsomeglue.slack.com/messages/CG4DJCVB2/" class="link_wrapper"><div class="fav"><img src="https://getsomeglue.slack.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=getsomeglue.slack.com'" /></div><div class="link">getsomeglue.slack.com</div>
+<div class="sub_link">lawa-guest-survey-bid | The Glue Slack</div>
+</a><a href="https://github.com/kanouse?tab=repositories" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">Your Repositories</div>
+</a><a href="https://www.amazon.com/Frost-King-DS8W-25-Replacement/dp/B00KXWNSR2/ref=mp_s_a_1_2?ie=UTF8&qid=1549747671&sr=8-2&pi=AC_SX236_SY340_QL65&keywords=frost+king+door+seal&dpPl=1&dpID=31d2ISy5BRL&ref=plSrch" class="amazon link_wrapper"><div class="fav"><img src="https://www.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.amazon.com'" /></div><div class="amazon link">amazon.com</div>
+<div class="amazon sub_link">Frost King DS8W/25 Replacement Door Seal for Kerfed Millwork Doors, 1" x Feet, White - - Amazon.com</div>
+</a><a href="https://www.nickiswift.com/40044/strange-things-gisele-toms-marriage/" class="link_wrapper"><div class="fav"><img src="https://www.nickiswift.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=www.nickiswift.com'" /></div><div class="link">nickiswift.com</div>
+<div class="sub_link">Strange things about Gisele and Tom's marriage:</div>
+</a><a href="http://fiv/" class="tld link_wrapper"><div class="fav"><img src="http://fiv/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=fiv'" /></div><div class="tld link">fiv</div>
 <div class="tld sub_link">Failed to open page</div>
-</a></div><h2 class='section-header'>google.com (past 45 days)</h2><div class="column"><a href="https://docs.google.com/spreadsheets/d/1MaHJlvxWohKiUq-KVBDNj2byZ1llfdoZ_1kw9I2lOKo/edit#gid=0" class="frag link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="frag link">docs.google.com</div>
-<div class="frag sub_link">Untitled spreadsheet - Google Sheets</div>
-</a><a href="https://docs.google.com/presentation/d/1dpt9e7BKQQgVLz-Ze7ehswC3Wy5KkY83bUNJcrFg-Q8/edit#slide=id.p" class="frag link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="frag link">docs.google.com</div>
-<div class="frag sub_link">Untitled presentation - Google Slides</div>
-</a><a href="https://accounts.google.com/AddSession?continue=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fu%2F0%2F%3Fusp%3Ddirect_url%26authuser%3D&sacu=1&ignoreShadow=0&acui=0#Email=darryl%40kanouse.net" class="frag link_wrapper"><div class="fav"><img src="https://accounts.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=accounts.google.com'" /></div><div class="frag link">accounts.google.com</div>
-<div class="frag sub_link">Sign in - Google Accounts</div>
-</a><a href="https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&continue=https://docs.google.com/spreadsheets/u/0/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/u/0/?usp%3Ddirect_url&ltmpl=sheets&authuser=0" class="link_wrapper"><div class="fav"><img src="https://accounts.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=accounts.google.com'" /></div><div class="link">accounts.google.com</div>
-<div class="sub_link">Google Sheets: Sign-in</div>
-</a><a href="https://docs.google.com/document/u/0/" class="link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="link">docs.google.com</div>
-<div class="sub_link">Google Docs</div>
-</a><a href="https://docs.google.com/presentation/u/2/" class="link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="link">docs.google.com</div>
-<div class="sub_link">Google Slides</div>
-</a><a href="https://docs.google.com/spreadsheets/u/0/" class="link_wrapper"><div class="fav"><img src="https://docs.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.google.com'" /></div><div class="link">docs.google.com</div>
-<div class="sub_link">Google Sheets</div>
-</a></div><h2 class='section-header'>amazon.com (past 45 days)</h2><div class="column"><a href="https://connections-reporting.corp.amazon.com/#/?currentView=ORGS&selectedTimeRangeId=static-1-month" class="amazon frag link_wrapper"><div class="fav"><img src="https://connections-reporting.corp.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=connections-reporting.corp.amazon.com'" /></div><div class="amazon frag link">connections-reporting.corp.amazon.com</div>
-<div class="amazon frag sub_link">Connections Reporting</div>
-</a><a href="https://phonetool.amazon.com/users/djk" class="amazon link_wrapper"><div class="fav"><img src="https://phonetool.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=phonetool.amazon.com'" /></div><div class="amazon link">phonetool.amazon.com</div>
-<div class="amazon sub_link">Darryl Kanouse</div>
-</a><a href="https://forte.corp.amazon.com/forte/feedback" class="amazon link_wrapper"><div class="fav"><img src="https://forte.corp.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=forte.corp.amazon.com'" /></div><div class="amazon link">forte.corp.amazon.com</div>
-<div class="amazon sub_link">Forte</div>
-</a><a href="https://s3.console.aws.amazon.com/s3/buckets/wise.one-webroot/?region=us-east-1&tab=overview" class="amazon link_wrapper"><div class="fav"><img src="https://s3.console.aws.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=s3.console.aws.amazon.com'" /></div><div class="amazon link">s3.console.aws.amazon.com</div>
-<div class="amazon sub_link">S3 Management Console</div>
-</a><a href="https://console.aws.amazon.com/cloudfront/home?region=us-east-1#" class="amazon link_wrapper"><div class="fav"><img src="https://console.aws.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=console.aws.amazon.com'" /></div><div class="amazon link">console.aws.amazon.com</div>
-<div class="amazon sub_link">AWS CloudFront Management Console</div>
-</a><a href="https://jackson.corp.amazon.com/v1/action" class="amazon link_wrapper"><div class="fav"><img src="https://jackson.corp.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=jackson.corp.amazon.com'" /></div><div class="amazon link">jackson.corp.amazon.com</div>
-<div class="amazon sub_link">Jackson</div>
-</a><a href="https://phonetool.amazon.com/users/ejl" class="amazon link_wrapper"><div class="fav"><img src="https://phonetool.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=phonetool.amazon.com'" /></div><div class="amazon link">phonetool.amazon.com</div>
-<div class="amazon sub_link">Eric Lynch</div>
-</a><a href="https://meetings.amazon.com/" class="tld amazon link_wrapper"><div class="fav"><img src="https://meetings.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=meetings.amazon.com'" /></div><div class="tld amazon link">meetings.amazon.com</div>
-<div class="tld amazon sub_link">Amazon Meetings</div>
-</a><a href="https://aws.amazon.com/" class="tld amazon link_wrapper"><div class="fav"><img src="https://aws.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=aws.amazon.com'" /></div><div class="tld amazon link">aws.amazon.com</div>
-<div class="tld amazon sub_link">Amazon Web Services (AWS) - Cloud Computing Services</div>
-</a><a href="https://console.aws.amazon.com/console/home?nc2=h_ct&src=header-signin&region=us-east-1" class="amazon link_wrapper"><div class="fav"><img src="https://console.aws.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=console.aws.amazon.com'" /></div><div class="amazon link">console.aws.amazon.com</div>
-<div class="amazon sub_link">AWS Management Console</div>
-</a><a href="https://w.amazon.com/index.php/Main_Page" class="amazon link_wrapper"><div class="fav"><img src="https://w.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=w.amazon.com'" /></div><div class="amazon link">w.amazon.com</div>
-<div class="amazon sub_link">Main Page - Amazon Wiki</div>
-</a><a href="https://quip-amazon.com/8szPAuMjys9R/JacksonStitch-Reporting-Requirements" class="amazon link_wrapper"><div class="fav"><img src="https://quip-amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=quip-amazon.com'" /></div><div class="amazon link">quip-amazon.com</div>
-<div class="amazon sub_link">(4) Jackson/Stitch Reporting Requirements - Quip</div>
-</a><a href="https://quip-amazon.com/RnhHAhpr0WH0/Stitch-Tasks-to-Track" class="amazon link_wrapper"><div class="fav"><img src="https://quip-amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=quip-amazon.com'" /></div><div class="amazon link">quip-amazon.com</div>
-<div class="amazon sub_link">(1) Stitch Tasks to Track - Quip</div>
-</a><a href="https://quip-amazon.com/bLOoAsA9i9MG/Jackson-Iteration-1-Journeys" class="amazon link_wrapper"><div class="fav"><img src="https://quip-amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=quip-amazon.com'" /></div><div class="amazon link">quip-amazon.com</div>
-<div class="amazon sub_link">(6) Jackson: Iteration 1 Journeys - Quip</div>
-</a><a href="https://drive.corp.amazon.com/personal/djk" class="amazon link_wrapper"><div class="fav"><img src="https://drive.corp.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=drive.corp.amazon.com'" /></div><div class="amazon link">drive.corp.amazon.com</div>
-<div class="amazon sub_link">djk@</div>
-</a><a href="https://bullseye2-na.amazon.com/query?dst=EMAIL" class="amazon link_wrapper"><div class="fav"><img src="https://bullseye2-na.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=bullseye2-na.amazon.com'" /></div><div class="amazon link">bullseye2-na.amazon.com</div>
-<div class="amazon sub_link">Bullseye : Query</div>
-</a><a href="https://drive.corp.amazon.com/personal/djk/jackson-distros" class="amazon link_wrapper"><div class="fav"><img src="https://drive.corp.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=drive.corp.amazon.com'" /></div><div class="amazon link">drive.corp.amazon.com</div>
-<div class="amazon sub_link">jackson-distros</div>
-</a><a href="https://quip-amazon.com/SE8ZAuuOSv8N" class="amazon link_wrapper"><div class="fav"><img src="https://quip-amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=quip-amazon.com'" /></div><div class="amazon link">quip-amazon.com</div>
-<div class="amazon sub_link">(4) Stitch Content Planning Task Tracker - Quip</div>
-</a><a href="https://quip-amazon.com/mFC7AEHAZB9a/PB-Category-Segments-Initial-POC" class="amazon link_wrapper"><div class="fav"><img src="https://quip-amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=quip-amazon.com'" /></div><div class="amazon link">quip-amazon.com</div>
-<div class="amazon sub_link">(1) PB Category Segments - Initial POC - Quip</div>
-</a><a href="https://console.aws.amazon.com/acm/home?region=us-east-1#/wizard" class="amazon frag link_wrapper"><div class="fav"><img src="https://console.aws.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=console.aws.amazon.com'" /></div><div class="amazon frag link">console.aws.amazon.com</div>
-<div class="amazon frag sub_link">AWS Certificate Manager</div>
-</a><a href="https://corp.quip-amazon.com/lldWAOGhaG5y/Adding-Subcategory-Actions-to-Jackson" class="amazon link_wrapper"><div class="fav"><img src="https://corp.quip-amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=corp.quip-amazon.com'" /></div><div class="amazon link">corp.quip-amazon.com</div>
-<div class="amazon sub_link">(2) Adding Subcategory Actions to Jackson - Quip</div>
-</a><a href="https://inside.amazon.com/en/Employment/Career/Role_Guidelines/_layouts/WordViewer.aspx?id=/en/Employment/Career/Role_Guidelines/Role_Guidelines/PMT_Product_Manager_Technical_Role_Guideline.docx" class="amazon link_wrapper"><div class="fav"><img src="https://inside.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=inside.amazon.com'" /></div><div class="amazon link">inside.amazon.com</div>
-<div class="amazon sub_link">PMT_Product_Manager_Technical_Role_Guideline.docx</div>
-</a><a href="https://inside.amazon.com/en/Employment/Career/Role_Guidelines/_layouts/WordViewer.aspx?id=/en/Employment/Career/Role_Guidelines/Role_Guidelines/Role%20Comparisons/Product_and_Program_Management_Comparison_Guideline.docx" class="amazon link_wrapper"><div class="fav"><img src="https://inside.amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=inside.amazon.com'" /></div><div class="amazon link">inside.amazon.com</div>
-<div class="amazon sub_link">Product_and_Program_Management_Comparison_Guideline.docx</div>
-</a><a href="https://quip-amazon.com/" class="tld amazon link_wrapper"><div class="fav"><img src="https://quip-amazon.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=quip-amazon.com'" /></div><div class="tld amazon link">quip-amazon.com</div>
-<div class="tld amazon sub_link">Updates - Quip</div>
+</a><a href="https://docs.wise.one/company/about-wise.one-inc." class="link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="link">docs.wise.one</div>
+<div class="sub_link">About wise.one, Inc. - wise.one</div>
+</a><a href="https://docs.wise.one/company/help-wanted" class="link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="link">docs.wise.one</div>
+<div class="sub_link">Help Wanted - wise.one</div>
+</a><a href="https://docs.wise.one/~/settings/customization" class="link_wrapper"><div class="fav"><img src="https://docs.wise.one/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=docs.wise.one'" /></div><div class="link">docs.wise.one</div>
+<div class="sub_link">Customization - wise.one</div>
+</a><a href="https://drive.google.com/drive/u/1/folders/0BzDSYxn7RQ3HUkJQNmk4U0Vrb3M?ths=true" class="link_wrapper"><div class="fav"><img src="https://drive.google.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=drive.google.com'" /></div><div class="link">drive.google.com</div>
+<div class="sub_link">Person - Google Drive</div>
+</a><a href="https://github.com/getwiseone/yz1-api-flask-restplus/issues" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">Issues · getwiseone/yz1-api-flask-restplus</div>
+</a><a href="https://github.com/getwiseone/yz1-app-ionic/issues/20" class="link_wrapper"><div class="fav"><img src="https://github.com/favicon.ico" onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=github.com'" /></div><div class="link">github.com</div>
+<div class="sub_link">Questions have NC-17 flag · Issue #20 · getwiseone/yz1-app-ionic</div>
 </a></div>
-        </div>
     </body>
 </html>
