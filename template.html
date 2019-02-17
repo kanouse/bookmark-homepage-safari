@@ -1,74 +1,111 @@
 <html>
     <head>
-      <style>
-         body { background-color: #eeeeee; font-family: "Helvetica Neue";  }
-        a { font-size:16px; text-decoration: none; }
+        <style>
+            body {
+                background-color: #7d9a98;
+                font-family: "Helvetica Neue";
+            }
+            a {
+                font-size: 16px;
+                text-decoration: none;
+            }
 
+            .grid-container {
+                width: 85%;
+                margin: auto;
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+            }
 
-        .grid-container {
-          width: 85%;
-          margin: auto;
-          display: grid;
-          grid-template-columns: auto auto auto auto auto;
-        }
-
-
-
-        .sub_link { color: #333333; font-size:11px; }
-        .link { color: #333333; }
-        .link_wrapper { 
-          /*
+            .sub_link {
+                color: #333333;
+                font-size: 11px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .link {
+                color: #333333;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .link_wrapper {
+                /*
           display:block; 
           float:left; 
           */
-          width:auto; 
-          height:38px; 
-          padding:12px; 
-          border:solid #999999 1px; 
-          overflow:hidden; 
-          margin:2px; 
-          background-color:#Cfe3e5;  
-          /* box-shadow: 1px 1px 1px #666666; */
-          border-radius: 4px; 
-          white-space: nowrap;
-        }
-        .tld.link { font-weight: bold; }
-        .tld { background: #ffffff; }
-        .tld.link_wrapper { background: #ffffff; }
-        /* .frag { background: #95C0C1 } */
-        .amazon.link_wrapper { background: rgb(240, 212, 161);}
-        .amazon.frag, .amazon.tld { background: rgb(240, 212, 161); }
-        .amazon { color: black; }
-        div.fav { float: left; margin:4px 8px 32px 0; }
-        div.fav img { width:16px; height:16px; }
-        h2 { 
-          color: #333333; 
-          font-family: "Helvetica Neue"; 
-          margin:12px 0 0 0; font-size:16px;
-        }
-        .note { 
-          color: #333333; 
-          font-size:10px; 
-          margin:2px 0px 4px 0px; 
-        }
-        h2.section-header { 
-          grid-column: 1/6;
-          font-size: 10px;
-          font-weight: normal;
-          padding: 4px;
-          /*
+                width: auto;
+                height: 38px;
+                padding: 12px;
+                border: solid #999999 1px;
+                overflow: hidden;
+                margin: 1px;
+                background-color: #dde8ce;
+                /* box-shadow: 1px 1px 1px #666666; */
+                border-radius: 4px;
+                white-space: nowrap;
+            }
+            .tld.link {
+                font-weight: bold;
+            }
+            .tld {
+                background: #ffffff;
+            }
+            .tld.link_wrapper {
+                background: #ffffff;
+            }
+            /* .frag { background: #95C0C1 } */
+            .amazon.link_wrapper {
+                background: #f0d4a1;
+            }
+            .amazon.frag,
+            .amazon.tld {
+                background: #f0e4c1;
+            }
+            .amazon {
+                color: black;
+            }
+            div.fav {
+                float: left;
+                margin: 4px 8px 32px 0;
+            }
+            div.fav img {
+                width: 16px;
+                height: 16px;
+            }
+            h2 {
+                color: #ffffff;
+                font-family: "Helvetica Neue";
+                margin: 12px 0 0 0;
+                font-size: 16px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .note {
+                color: #ffffff;
+                font-size: 10px;
+                margin: 2px 0px 4px 0px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            h2.section-header {
+                grid-column: 1/6;
+                font-size: 10px;
+                font-weight: normal;
+                padding: 4px;
+                text-align: right;
+                /*
           margin-bottom: 4px;
           border-bottom: solid 1px #ffffff;
           */
-        }
-        .column { 
-          width:560px; 
-          float:left; 
-          padding-bottom:12px;
-        }
-    </style>
+            }
+            .column {
+                width: 560px;
+                float: left;
+                padding-bottom: 12px;
+            }
+        </style>
     </head>
     <body>
-          {% body %}
+        {% body %}
     </body>
 </html>
