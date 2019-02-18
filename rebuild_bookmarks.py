@@ -138,14 +138,14 @@ body = write_bookmarks(body, cursor, written, 20, False)
 cursor = conn.execute("""
   select sum(score) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
-  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-28 day')
+  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-42 day')
     -- and h.url like '%amazon.com%'
     -- and h.url not like '%www.amazon.com%'
   group by h.url, v.title
   order by count desc
   limit 200
   """)
-body += "<h2 class='section-header'>15</h2>"
+body += "<h2 class='section-header'>42</h2>"
 body = write_bookmarks(body, cursor, written, 100, False)
 body += "</div>"
 with io.open('homepage.html', 'wb') as file:
