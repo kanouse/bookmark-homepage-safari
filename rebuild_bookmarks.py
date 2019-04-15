@@ -42,14 +42,14 @@ def write_bookmarks(body, cursor, written, limit, tldonly ):
         style_class = ''
         try:
             if not row[2]:
-            	continue
+                continue
                 # style_class += 'notitle '   # NO TITLE! make is small
                 # title = url
             else:
                 title = row[2]
             long_title = str(parsed.netloc) + '|' + str(title)
         except:
-        	# continue
+            # continue
             style_class += 'notitle '
             long_title = parsed.netloc
 
