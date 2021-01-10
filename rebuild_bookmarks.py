@@ -100,7 +100,7 @@ cursor = conn.execute("""
   select sum(score) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
   where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-182 day')
-    and h.url not like '%amazon.com%'
+    -- and h.url not like '%amazon.com%'
     -- and h.url || v.title not like '%wise.one%'
   group by h.url, v.title
   order by count desc
@@ -113,7 +113,7 @@ cursor = conn.execute("""
   select sum(score) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
   where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-14 day')
-    and ((h.url not like '%amazon.com%') or (h.url like '%www.amazon.com%'))
+    -- and ((h.url not like '%amazon.com%') or (h.url like '%www.amazon.com%'))
     -- and h.url not like '%docs.google.com%'
   group by h.url, v.title
   order by count desc
@@ -126,25 +126,27 @@ cursor = conn.execute("""
   select sum(score) as count, h.url, v.title from history_visits v 
     inner join history_items h on h.id = v.history_item
   where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-91 day')
-    and h.url like '%amazon.com%'
-    and h.url not like '%www.amazon.com%'
-  group by h.url, v.title
-  order by count desc
-  limit 200
-  """)
-body += "<h2 class='section-header'>(amazon) 91</h2>"
-body = write_bookmarks(body, cursor, written, 20, False)
-
-cursor = conn.execute("""
-  select sum(score) as count, h.url, v.title from history_visits v 
-    inner join history_items h on h.id = v.history_item
-  where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-42 day')
     -- and h.url like '%amazon.com%'
     -- and h.url not like '%www.amazon.com%'
   group by h.url, v.title
   order by count desc
   limit 200
   """)
+
+# body += "<h2 class='section-header'>(amazon) 91</h2>"
+# body = write_bookmarks(body, cursor, written, 20, False)
+#
+# cursor = conn.execute("""
+#   select sum(score) as count, h.url, v.title from history_visits v
+#     inner join history_items h on h.id = v.history_item
+#   where datetime(v.visit_time + 978307200, 'unixepoch', 'localtime') > datetime('now', '-42 day')
+#     -- and h.url like '%amazon.com%'
+#     -- and h.url not like '%www.amazon.com%'
+#   group by h.url, v.title
+#   order by count desc
+#   limit 200
+#   """)
+
 body += "<h2 class='section-header'>42</h2>"
 body = write_bookmarks(body, cursor, written, 100, False)
 body += "</div>"
