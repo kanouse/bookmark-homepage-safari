@@ -7,7 +7,7 @@ print ('creating bookmarks...')
 
 # History is stored as a sqllite database.
 # Fun fact, a linked iOS device will update this history as well.
-HISTORY_LOCATION = "/Users/djk/Library/Safari/History.db"
+HISTORY_LOCATION = "/Users/darryl/Library/Safari/History.db"
 
 # Open a connection to the safari history database
 conn = sqlite3.connect(HISTORY_LOCATION)
@@ -68,8 +68,8 @@ def write_bookmarks(body, cursor, written, limit, tldonly ):
             style_class += 'tld '           # make it bold! because this is a top level domain
         elif tldonly: continue
 
-        if 'amazon' in str(parsed.netloc):
-            style_class += 'amazon '        # AMAZON! make it colorful
+        if 'kanouse' in str(long_title).lower():
+            style_class += 'kanouse '        # AMAZON! make it colorful
         if parsed.fragment != '':
             style_class += 'frag '          # FRAGMENT- this has a # so make it small
 
